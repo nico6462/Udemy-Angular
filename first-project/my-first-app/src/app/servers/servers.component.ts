@@ -19,7 +19,6 @@ export class ServersComponent implements OnInit {
 
   displayDetails = false;
   btnClick = [];
-  nbmClick = 0;
 
   constructor() {
     setTimeout(() => {
@@ -45,8 +44,6 @@ export class ServersComponent implements OnInit {
   onBtnClick(){
     this.displayDetails = !this.displayDetails;
     this.btnClick.push(Date.now());
-    this.nbmClick = this.nbmClick + 1;
-    console.log(this.btnClick);
   }
 
 }

@@ -16,12 +16,14 @@
 <p>servers works!</p>
 <app-server *ngFor="let server of servers"></app-server>
 
+<hr>
 
 <button
   class="btn btn-primary"
   (click)="onBtnClick()">Display Details</button>
 <p *ngIf="displayDetails">Secret Password = tuna</p>
-<p *ngFor="let click of btnClick"
-  [ngStyle]= "{backgroundColor: nbmClick >= 5 ? 'blue' : 'none'}"
-  [ngClass]= "{white: nbmClick >= 5}"
-> {{ click }} </p>
+<div *ngFor="let click of btnClick; let i = index"
+  [ngStyle]= "{backgroundColor: i >= 4 ? 'blue' : 'none'}"
+  [ngClass]= "{white: i >= 4}">
+  {{ click }}
+</div>
