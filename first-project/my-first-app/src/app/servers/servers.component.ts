@@ -14,12 +14,15 @@ export class ServersComponent implements OnInit {
   allowNewServer = false;
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
+  userName = 'Nicolas';
+  enableSetUser = false;
 
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
-   }
+
+  }
 
   ngOnInit(): void {
   }
@@ -31,6 +34,17 @@ export class ServersComponent implements OnInit {
   onUpdateServerName(event: any){
     console.log(event);
     this.serverName = event.target.value;
+  }
+
+  onEnableSetUser(){
+    if (this.userName != '') {
+      this.enableSetUser = false;
+    }
+  }
+
+  onSetUserName(){
+    this.userName = '';
+    this.enableSetUser = true;
   }
 
 }
