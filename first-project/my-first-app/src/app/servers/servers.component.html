@@ -15,3 +15,13 @@
 <p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
 <p>servers works!</p>
 <app-server *ngFor="let server of servers"></app-server>
+
+
+<button
+  class="btn btn-primary"
+  (click)="onBtnClick()">Display Details</button>
+<p *ngIf="displayDetails">Secret Password = tuna</p>
+<p *ngFor="let click of btnClick"
+  [ngStyle]= "{backgroundColor: nbmClick >= 5 ? 'blue' : 'none'}"
+  [ngClass]= "{white: nbmClick >= 5}"
+> {{ click }} </p>

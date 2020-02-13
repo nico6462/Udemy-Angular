@@ -15,7 +15,11 @@ export class ServersComponent implements OnInit {
   serverCreationStatus = 'No server was created!';
   serverName = 'TestServer';
   serverCreated = false;
-  servers = ['TestServer, Testserver 2']
+  servers = ['TestServer, Testserver 2'];
+
+  displayDetails = false;
+  btnClick = [];
+  nbmClick = 0;
 
   constructor() {
     setTimeout(() => {
@@ -36,6 +40,13 @@ export class ServersComponent implements OnInit {
   onUpdateServerName(event: any){
     console.log(event);
     this.serverName = event.target.value;
+  }
+
+  onBtnClick(){
+    this.displayDetails = !this.displayDetails;
+    this.btnClick.push(Date.now());
+    this.nbmClick = this.nbmClick + 1;
+    console.log(this.btnClick);
   }
 
 }
